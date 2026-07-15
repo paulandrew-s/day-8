@@ -16,29 +16,30 @@ def test_add_positive_and_negative():
 def test_add_float():
     assert add(2.4, 3.2) == 5.6
 
+# two test cases for subtract
+def test_subtract():
+    assert subtract(5, 3) == 2
 
+def test_subtract_negative_numbers():
+    assert subtract(-5, -3) == -2
 
-def main():
-    print("1. Addition")
-    print("2. Subtraction")
-    print("3. Multiplication")
-    print("4. Division")
+# two test cases for multiply
+def test_multiply():
+    assert multiply(2, 3) == 6
 
-    choice = int(input('Enter your choice: '))
+def test_multiply_zer():
+    assert multiply(5, 0) == 0
 
-    num1, num2 = [float(x) for x in input('Enter two numbers: ')]
+# two test cases for division
+def test_divide():
+    assert divide(6, 3) == 2
 
-    if choice == 1:
-        print('The result of addition is: ', add(num1, num2))
-    elif choice == 2:
-        print('The result of subtraction is: ', subtract(num1, num2))
-    elif choice == 3:
-        print('The result of multiplication is: ', multiply(num1, num2))
-    elif choice == 4:
-        print('The result of division is: ', divide(num1, num2))
+def test_divide_by_zero():
+    try:
+        divide(5, 0)
+    except ZeroDivisionError:
+        pass
     else:
-        print('Invalid choice')
+        assert False, "Expected ZeroDivisionError"
 
 
-if __name__ == "__main__":
-    main()
