@@ -21,6 +21,3 @@ def test_edge_unique_words():
 
 def test_edge_rev_string():
     assert tutil.rev_string("hello world") == "dlrow olleh"
-
-
-
